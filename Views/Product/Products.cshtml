@@ -1,0 +1,38 @@
+﻿@model IQueryable<MySQLApp.Models.Product>
+@{
+    ViewBag.Title = "Produkty";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Produkty</h2>
+@foreach(MySQLApp.Models.Product pr in Model)
+{
+    <div class="block-12 product">
+        <div class="block-6">
+            <span><a href="@Url.Action("Product","Product", new { Id = pr.Id })">@pr.Name</a></span>
+            <span>@pr.Price</span>
+            <span>@pr.Rating</span>
+        </div>
+        <div class="block-6">
+            @if (pr.Image != null)
+            {
+                <img src="@Url.Action("GetImage", "Product", new { id = pr.Image.Id })" alt="err" />
+            }
+            else
+            {
+                <span style="display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:25px;color:red;">Brak zdjęcia</span>
+            }
+        </div>
+        @if(User.Identity.IsAuthenticated && (User.IsInRole("worker") || User.IsInRole("admin")))
+        {
+            <div class="block-12">
+                <div class="block-6" style="height:5px;"></div>
+                <div class="block-3"><button type="button" class="Edit" value="">Edytuj</button></div>
+                <div class="block-3"><button type="button" class="Delete">Usuń</button></div>
+            </div>
+        }
+    </div>
+}
+<script>
+    $(".Edit").on("click")
+</script>

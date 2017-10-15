@@ -1,0 +1,67 @@
+﻿@font-face {
+    font-family: 'Source';
+    font-style: normal;
+    font-weight: 400;
+    src: url(~/fonts/SourceSand.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+
+body {
+    font-family: Source, sans-serif;
+    font-size: 25px;
+}
+input[type=submit]
+{
+    margin: 15px auto;
+    padding:5px;
+    font-size:20px;
+    text-align:center;
+    display:block;
+}
+.header{
+    background-color:#a70d0d;
+    color:white;
+}
+.header-logo{
+    margin:0 auto;
+    text-align:center;
+    display:inline-block;
+}
+.footer{
+    background-color:#570808;
+    color:white;
+}
+.header,.footer{
+    min-height:200px;
+    padding:10px 0px;
+}
+.product{
+    max-height:300px;
+}
+.product img{
+    width:200px;
+    height:200px;
+}
+.footer-head,.footer-link{
+    display:block;
+    color:white;
+}
+.footer-head{
+    font-weight:bold;
+    font-size:30px;
+    text-indent:4px;
+}
+.footer-link{
+    font-size:25px;
+    text-indent:2px;
+}
+.product-image, .header-logo-img {
+    max-width: 100%;
+    min-width: 200px;
+    max-height: 100%;
+    min-height: 200px;
+}
+.header-logo-img{
+    margin:15px auto;
+    display:block;
+}

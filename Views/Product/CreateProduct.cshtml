@@ -1,0 +1,35 @@
+﻿@model MySQLApp.Models.CreateProduct
+
+@{
+    ViewBag.Title = "CreateProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="block-12">CreateProduct</h2>
+@using (Html.BeginForm("CreateProduct", "Product", method: FormMethod.Post, htmlAttributes: new { @class = "block-12 form", enctype="multipart/form-data" }))
+{
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Name)
+        @Html.EditorFor(x => x.Name)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Price)
+        @Html.EditorFor(x => x.Price)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Rating)
+        @Html.EditorFor(x => x.Rating)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Desc)
+        @Html.TextAreaFor(x => x.Desc)
+    </div>
+    <div class="form-elem-ver">
+        <label>Obraz</label>
+        <input type="file" accept="image/*" name="image"/>
+    </div>
+    <div class="form-elem-ver">
+        @Html.ValidationSummary()
+    </div>
+    <input type="submit" vlaue="Stwórz" />
+}

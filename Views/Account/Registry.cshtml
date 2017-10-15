@@ -1,0 +1,29 @@
+﻿@model MySQLApp.Models.CreateUser
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registry</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.UserName)
+        @Html.EditorFor(x => x.UserName)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.Password)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.PasswordConfirm)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Email)
+        @Html.EditorFor(x => x.Email)
+    </div>
+    <input type="submit" value="Rejestruj" />
+}
+

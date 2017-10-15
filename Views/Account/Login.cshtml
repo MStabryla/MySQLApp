@@ -1,0 +1,28 @@
+﻿@model MySQLApp.Models.Login_View
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Account", method: FormMethod.Post, htmlAttributes: new { @class = "block-12" }))
+{
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Login)
+        @Html.EditorFor(x => x.Login)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.Password)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.IsPersistent)
+        @Html.EditorFor(x => x.IsPersistent)
+    </div>
+    <div class="form-valid">
+        @Html.ValidationSummary()
+    </div>
+    <input type="hidden" name="ReturnUrl" value="@ViewBag.rUrl"/>
+    <input type="submit" value="Zaloguj" />
+}
+

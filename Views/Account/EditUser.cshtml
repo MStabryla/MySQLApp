@@ -1,0 +1,24 @@
+﻿@model MySQLApp.Models.MyUser
+
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="block-12">Edycja użytkownika @Model.UserName</h2>
+@using (Html.BeginForm("EditUser", "Account", FormMethod.Post, htmlAttributes: new { @class = "form block-12" }))
+{
+    <input type="hidden" name="Id" value="@Model.Id"/>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.UserName)
+        @Html.EditorFor(x => x.UserName)
+    </div>
+    <div class="form-elem-ver">
+        @Html.LabelFor(x => x.Email)
+        @Html.EditorFor(x => x.Email)
+    </div>
+    <div class="block-12">
+        @Html.ValidationSummary()
+    </div>
+    <input type="submit" value="Edytuj" />
+}

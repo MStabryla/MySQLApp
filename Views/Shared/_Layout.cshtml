@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>MySQLApp - @ViewBag.Title</title>
+    <link href="~/img/icon.png" rel="icon" type="image/x-icon" />
+    <link href="~/css/Zero.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/GridSheet.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/Main.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container container-small">
+            <div class="block-4">
+                <img src="~/img/icon.png" class="header-logo-img" alt="err"/>
+            </div>
+            <h1 class="block-8 header-logo">Sklep MySQL</h1>
+        </div>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container container-small">
+            <div class="block-6">
+                <span class="footer-head">Konto</span>
+                <span class="footer-link">@Html.ActionLink("Produkty","Products","Product")</span>
+                @if (User.Identity.IsAuthenticated && (User.IsInRole("worker") || User.IsInRole("admin")))
+                {
+                    <span class="footer-link">@Html.ActionLink("Nowy", "CreateProduct", "Product")</span>
+                }
+            </div>
+            <div class="block-6">
+                <span class="footer-head">Produkty</span>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <span class="footer-link">@Html.ActionLink("Zaloguj", "Login", "Account")</span>
+                    <span class="footer-link">@Html.ActionLink("Zarejestruj", "Registry", "Account")</span>
+                }
+                else
+                {
+                    <span class="footer-link">@Html.ActionLink("Wyloguj", "LogOut", "Account")</span>
+                }
+                @if (User.IsInRole("admin"))
+                {
+                    <span class="footer-link">@Html.ActionLink("Panel Administratora", "UserPanel", "Account")</span>
+                }
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model List<MySQLApp.Models.MyUser>
+@{
+    ViewBag.Title = "Panel administratora";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="block-12">UserPanel</h2>
+@foreach(MySQLApp.Models.MyUser user in Model)
+{
+    <div class="block-12" id="User-@user.Id">
+        <div class="block-6">
+            <span>@user.UserName</span>
+            <span>@user.Email</span>
+        </div>
+        <div class="block-3">
+            <button type="button" class="Edit" value="@user.UserName">Edytuj</button>
+        </div>
+        <div class="block-3">
+            <button type="button" class="Delete" value="@user.UserName">Usuń</button>
+        </div>
+    </div>
+}
+<script>
+    $(".Delete").on("click", function () {
+        console.log(this.getAttribute("value"));
+        $.ajax({
+            type:"text",
+            method: "POST",
+            url:"@Url.Action("DeleteUser","Account")",
+            data: { Name: this.getAttribute("value") },
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (err)
+            {
+                console.log("LOL",err);
+            }
+        })
+    });
+    $(".Edit").on("click", function () {
+        console.log(window.location.href);
+        window.location.href = "@Url.Action("EditUser", "Account")" + "/" + this.getAttribute("value");
+    })
+</script>
