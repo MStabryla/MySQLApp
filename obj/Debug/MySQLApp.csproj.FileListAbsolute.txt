@@ -53,8 +53,6 @@ C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\EntityFramewo
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\EntityFramework.SqlServer.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\MySql.Data.dll
-C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\MySql.Data.Entity.EF6.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\System.Web.Helpers.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\System.Web.Mvc.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\System.Web.Razor.dll
@@ -70,7 +68,6 @@ C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\System.Web.We
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\System.Web.Webpages.Razor.xml
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\System.Web.Helpers.xml
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\System.Web.Mvc.xml
-C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.csprojResolveAssemblyReference.cache
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.csproj.CoreCompileInputs.cache
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.pdb
@@ -78,7 +75,6 @@ C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLAp
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.csproj.GenerateResource.Cache
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\MySql.Web.dll
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\MySql.Data.xml
@@ -114,3 +110,5 @@ C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.Pra
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.Practices.Unity.Mvc.xml
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
 C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.Migrations.Images.resources
+C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.csprojAssemblyReference.cache
+C:\Users\maatt\OneDrive\Aplikacje_Serwerowe\Koszałka\MySQLApp\obj\Debug\MySQLApp.csproj.CopyComplete

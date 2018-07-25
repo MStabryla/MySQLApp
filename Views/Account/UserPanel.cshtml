@@ -38,7 +38,6 @@
         })
     });
     $(".Edit").on("click", function () {
-        console.log(window.location.href);
         window.location.href = "@Url.Action("EditUser", "Account")" + "/" + this.getAttribute("value");
     })
 </script>

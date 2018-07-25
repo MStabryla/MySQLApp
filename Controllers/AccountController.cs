@@ -77,7 +77,7 @@ namespace MySQLApp.Controllers
         [Route("profil")]
         public ActionResult EditProfile()
         {
-            return View(ActUser);
+            return View("EditUser", ActUser);
         }
         [HttpPost]
         [Route("profil")]
@@ -119,7 +119,7 @@ namespace MySQLApp.Controllers
             {
                 ViewBag.Completed = false;
             }
-            return View(ActUser);
+            return RedirectToAction("GetUser");
         }
         [HttpGet]
         [AllowAnonymous]

@@ -5,34 +5,57 @@
 }
 
 <h2>Produkty</h2>
-@foreach(MySQLApp.Models.Product pr in Model)
-{
-    <div class="block-12 product">
-        <div class="block-6">
-            <span><a href="@Url.Action("Product","Product", new { Id = pr.Id })">@pr.Name</a></span>
-            <span>@pr.Price</span>
-            <span>@pr.Rating</span>
-        </div>
-        <div class="block-6">
-            @if (pr.Image != null)
-            {
-                <img src="@Url.Action("GetImage", "Product", new { id = pr.Image.Id })" alt="err" />
-            }
-            else
-            {
-                <span style="display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:25px;color:red;">Brak zdjęcia</span>
-            }
-        </div>
-        @if(User.Identity.IsAuthenticated && (User.IsInRole("worker") || User.IsInRole("admin")))
-        {
-            <div class="block-12">
-                <div class="block-6" style="height:5px;"></div>
-                <div class="block-3"><button type="button" class="Edit" value="">Edytuj</button></div>
-                <div class="block-3"><button type="button" class="Delete">Usuń</button></div>
+<div class="product-list">
+    @foreach (MySQLApp.Models.Product pr in Model)
+    {
+        <div class="block-12 product">
+            <div class="block-6">
+                <div class="pr-row"><a class="pr-link" href="@Url.Action("Product","Product", new { Id = pr.Id })">@pr.Name</a></div>
+                <div class="pr-row">
+                    <span class="pr-lab">Cena: </span> <span class="pr-price">@pr.Price</span>
+                </div>
+                <div class="pr-row">
+                    <span class="pr-lab">Ocena: </span>
+                    <div class="pr-rate">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < pr.Rating)
+                            {
+                                <img class="pr-star" src="~/img/star_full.png" alt="err" />
+                            }
+                            else
+                            {
+                                <img class="pr-star" src="~/img/star_empty.png" alt="err" />
+                            }
+                        }
+                    </div>
+                </div>
             </div>
-        }
-    </div>
-}
+            <div class="block-3">
+                @if (pr.Image != null)
+                {
+                    <img src="@Url.Action("GetImage", "Product", new { id = pr.Image.Id })" alt="err" />
+                }
+                else
+                {
+                    <span style="display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:25px;color:red;">Brak zdjęcia</span>
+                }
+            </div>
+            @if (User.Identity.IsAuthenticated && (User.IsInRole("worker") || User.IsInRole("admin")))
+            {
+                <div class="block-3">
+                    <div class="pr-but"><button type="button" class="Edit" value="@pr.Id">Edytuj</button></div>
+                    <div class="pr-but"><button type="button" class="Delete" value="@pr.Id">Usuń</button></div>
+                </div>
+            }
+        </div>
+    }
+</div>
 <script>
-    $(".Edit").on("click")
+    $(".Edit").on("click", function () {
+        window.location.href = "@Url.Action("EditProduct","Product")" + "/" + this.getAttribute("value");
+    })
+    $(".Delete").on("click", function () {
+        window.location.href = "@Url.Action("RemoveProduct","Product")" + "/" + this.getAttribute("value");
+    })
 </script>

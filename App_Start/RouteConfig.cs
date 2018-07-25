@@ -18,7 +18,6 @@ namespace MySQLApp
                 url: "{controller}/{action}",
                 defaults: new { controller = "Product", action = "Products" }
             );
-            var stop = "stop";
         }
     }
 }

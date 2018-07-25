@@ -45,6 +45,7 @@
                 else
                 {
                     <span class="footer-link">@Html.ActionLink("Wyloguj", "LogOut", "Account")</span>
+                    <span class="footer-link">@Html.ActionLink("Twoje konto", "GetUser", "Account")</span>
                 }
                 @if (User.IsInRole("admin"))
                 {

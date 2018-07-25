@@ -11,10 +11,29 @@
         <img src="@Url.Action("GetImage","Product", new { id = Model.Image.Id })" class="product-image" alt="err" />
     </div>
     <div class="block-6">
-        <p>@Model.Desc</p>
-    </div>
-    <div class="block-12">
-        <span>Ocena - @Model.Rating</span>
-        <span>Cena - @Model.Price zł</span>
+        <div class="pro-row">
+            <span class="pro-lab">Ocena</span>
+            @for (int i = 0; i < 5; i++)
+            {
+                if (i < Model.Rating)
+                {
+                    <img class="pro-star" src="~/img/star_full.png" alt="err" />
+                }
+                else
+                {
+                    <img class="pro-star" src="~/img/star_empty.png" alt="err" />
+                }
+            }
+        </div>
+        <div class="pro-row">
+            <span class="pro-lab">Cena</span>
+            <span class="pro-price">@Model.Price</span>
+        </div>
+        <div class="pro-row">
+            <span class="pro-lab">Opis</span>
+            <p class="pro-desc">
+                @Model.Desc
+            </p>
+        </div>
     </div>
 </div>

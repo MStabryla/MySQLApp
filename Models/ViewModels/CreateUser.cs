@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MySQLApp.Models
 {
@@ -10,14 +6,18 @@ namespace MySQLApp.Models
     {
         [Required]
         [StringLength(128)]
+        [Display(Name = "Nazwa użytkownika")]
         public string UserName { get; set; }
         [Required]
         [StringLength(128)]
         [DataType(DataType.Password)]
+        [Display(Name = "Hasło")]
         public string Password { get; set; }
         [Required]
         [StringLength(128)]
         [DataType(DataType.Password)]
+        [Compare("Password")]
+        [Display(Name = "Powtórz Hasło")]
         public string PasswordConfirm { get; set; }
         [Required]
         [StringLength(128)]

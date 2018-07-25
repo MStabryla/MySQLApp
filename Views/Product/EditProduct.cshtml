@@ -1,13 +1,15 @@
-﻿@model MySQLApp.Models.CreateProduct
+﻿@model MySQLApp.Models.Product
 
 @{
-    ViewBag.Title = "Nowy Produkt";
+    ViewBag.Title = "EditProduct";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="block-12">CreateProduct</h2>
-@using (Html.BeginForm("CreateProduct", "Product", method: FormMethod.Post, htmlAttributes: new { @class = "block-12 form", enctype="multipart/form-data" }))
+<h2>Produkt - @Model.Name</h2>
+
+@using(Html.BeginForm("EditProduct","Product",FormMethod.Post,htmlAttributes: new { @class = "form"}))
 {
+    <input type="hidden" value="@Model.Id" name="Id" />
     <div class="form-elem-ver">
         @Html.LabelFor(x => x.Name)
         @Html.EditorFor(x => x.Name)
@@ -18,13 +20,19 @@
     </div>
     <div class="form-elem-ver">
         @Html.LabelFor(x => x.Rating)
-        @Html.HiddenFor(x => x.Rating,new { value = 1})
+        @Html.HiddenFor(x => x.Rating, new { value = 1 })
         <div class="stars">
-            <img value="1" class="star-button" src="~/img/star_full.png" alt="err" />
-            <img value="2" class="star-button" src="~/img/star_empty.png" alt="err" />
-            <img value="3" class="star-button" src="~/img/star_empty.png" alt="err" />
-            <img value="4" class="star-button" src="~/img/star_empty.png" alt="err" />
-            <img value="5" class="star-button" src="~/img/star_empty.png" alt="err" />
+            @for (int i = 0; i < 5; i++)
+            {
+                if (i < Model.Rating)
+                {
+                    <img value="@i" class="star-button" src="~/img/star_full.png" alt="err" />
+                }
+                else
+                {
+                    <img value="@i" class="star-button" src="~/img/star_empty.png" alt="err" />
+                }
+            }
         </div>
     </div>
     <div class="form-elem-ver">
@@ -32,13 +40,9 @@
         @Html.TextAreaFor(x => x.Desc)
     </div>
     <div class="form-elem-ver">
-        <label>Obraz</label>
-        <input type="file" accept="image/*" name="image"/>
-    </div>
-    <div class="form-elem-ver">
         @Html.ValidationSummary()
     </div>
-    <input type="submit" vlaue="Stwórz" />
+    <input type="submit" value="Edytuj"/>
 }
 <script>
     $(".star-button").on("click", function () {

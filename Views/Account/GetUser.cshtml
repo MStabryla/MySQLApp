@@ -4,5 +4,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>GetUser</h2>
+<h2 class="block-12">Użytkownik</h2>
+<div class="block-12">
+    <div class="block-6">
+        <span>Nazwa użytkownika</span>
+    </div>
+    <div class="block-6">
+        <span>@Model.UserName</span>
+    </div>
+</div>
+<div class="block-12">
+    <div class="block-6">
+        <span>Adres E-mail</span>
+    </div>
+    <div class="block-6">
+        <span>@Model.Email</span>
+    </div>
+</div>
+<div class="block-12">
+    <div class="block-6">@Html.ActionLink("Edytuj","EditProfile")</div>
+</div>
 

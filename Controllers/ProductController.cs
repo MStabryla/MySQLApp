@@ -127,9 +127,32 @@ namespace MySQLApp.Controllers
         }
         [HttpPost]
         [Route("edytuj")]
-        public ActionResult EditProduct()
+        public async Task<ActionResult> EditProduct(EditProduct model)
         {
-            return View();
+            Product editedP = db.GetProduct(model.Id);
+            editedP.Name = model.Name;
+            editedP.Desc = model.Desc;
+            editedP.Price = model.Price;
+            editedP.Rating = model.Rating;
+            if(! await db.EditProduct(editedP))
+            {
+                ViewBag.Completed = false;
+                return View();
+            }
+            return RedirectToAction("Product","Product",new { id = editedP.Id });
+        }
+        [Authorize]
+        [HttpGet]
+        [Route("usun/{id}")]
+        public async Task<ActionResult> RemoveProduct(int id)
+        {
+            Product mod = db.GetProduct(id);
+            if(! await db.RemoveProduct(mod))
+            {
+                ViewBag.Completed = false;
+                return View();
+            }
+            return RedirectToAction("Products","Product");
         }
     }
 }
