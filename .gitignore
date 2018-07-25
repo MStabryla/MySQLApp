@@ -3,4 +3,6 @@
 ################################################################################
 
 /.vs
-/obj/Debug/MySQLApp.csprojAssemblyReference.cache
+/bin
+/obj
+
